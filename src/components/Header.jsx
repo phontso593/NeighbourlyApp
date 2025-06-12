@@ -41,6 +41,7 @@ const styles = {
     height: "140px",
     width: "auto",
   },
+  
   title: { color: "white", margin: 0 },
   link: { color: "white", margin: "0 1rem", textDecoration: "none" },
 };
