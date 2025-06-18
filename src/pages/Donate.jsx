@@ -6,12 +6,10 @@ import Footer from "../components/Footer";
 const Donate = () => {
   return (
     <>
-      <Header />
       <main>
         <h1>Donate Items</h1>
         <DonateForm />
       </main>
-      <Footer />
     </>
   );
 };
