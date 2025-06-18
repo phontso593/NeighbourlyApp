@@ -22,6 +22,8 @@ const Login = () => {
   return (
     <div style={containerStyle}>
       <form style={formStyle} onSubmit={handleSubmit}>
+        <br/>
+        <br/>
         <img src={logo} alt="Neighborly Logo" style={{ ...logoStyle, height: "80px", width: "80px" }} />
 
         <p style={{ textAlign: 'center', fontSize: '1.8rem', fontWeight: 400 }}>
@@ -32,52 +34,67 @@ const Login = () => {
           Please enter your detail to sign in.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
+          {/* Apple Login button */}
           <button
             type="button"
             style={{
               backgroundColor: '',
-              padding: '10px',
-              borderRadius: '5px',
+              padding: '5px',
+              borderRadius: '8px',
               border: '1px solid #000000',
               cursor: 'pointer',
-              width: '40%',
+              height: '30px',
+              width: '80px',
               fontSize: '0.9rem',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
             onClick={() => {
-              alert("For apple when implement with firebase.");
-            }} >
+              alert("For Apple when implement with firebase.");
+            }} > 
+            <img src={require("../assets/apple logo.png")} 
+            alt="Apple" style={{ height: '20px', width: '35px' }} />
           </button>
 
+          {/* Google Login button */}
           <button
             type="button"
             style={{
               backgroundColor: '',
               padding: '6px 12px',
-              borderRadius: '4px',
+              borderRadius: '8px',
               border: '1px solid #000000',
               cursor: 'pointer',
-              width: '40%',
+              height: '30px',
+              width: '80px',
               fontSize: '0.9rem',
             }}
             onClick={() => {
-              alert("For apple when implement with firebase.");
+              alert("For Google when implement with firebase.");
             }} >
+              <img src={require("../assets/google logo.jpg")} 
+            alt="Google" style={{ height: '18px', width: '15px',marginLeft:'20px' }} />
           </button>
 
+          {/*LinkedIn Login button */}
           <button
             type="button"
             style={{
               backgroundColor: '',
               padding: '6px 12px',
-              borderRadius: '4px',
+              borderRadius: '8px',
               border: '1px solid #000000',
               cursor: 'pointer',
-              width: '40%',
+              height: '30px',
+              width: '80px',
               fontSize: '0.9rem',
             }}
             onClick={() => {
-              alert("For apple when implement with firebase.");
+              alert("For LinkedIn when implement with firebase.");
             }} >
+              <img src={require("../assets/linkedinlogo.jpg")} 
+            alt="LinkedIn" style={{ height: '20px', width: '35px',marginLeft:'10px'}} />
           </button>
         </div>
 
@@ -101,7 +118,7 @@ const Login = () => {
           required
         />
         <br />
-        <button style={{ ...buttonStyle, fontSize: '1rem', padding: '6px 0' }} type="submit">Login</button>
+        <button style={{ ...buttonStyle, fontSize: '1rem', padding: '6px 0' }} type="submit">Sign in</button>
         <br />
         <p style={{ textAlign: 'center', color: '#adadad', fontSize: '0.9rem' }}>
           Don't have an account yet? <Link
