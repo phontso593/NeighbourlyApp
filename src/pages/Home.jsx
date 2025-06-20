@@ -7,7 +7,7 @@ const Home = () => {
     <>
       <Header />
       <main>
-        <h1>Welcome to Neighbourly</h1>
+        <h1>Welcome to Neighborly</h1>
         <p>Give what you can. Take what you need.</p>
       </main>
       <Footer />

@@ -2,11 +2,33 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from "../assets/neighborly-black-vertical.png";
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";   
+import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyBGnN9GJuboajSn7TdMGPFKU0xZjRLXyYA",
+    authDomain: "neighbourly-jassm.firebaseapp.com",
+    projectId: "neighbourly-jassm",
+    storageBucket: "neighbourly-jassm.firebasestorage.app",
+    messagingSenderId: "126061597996",
+    appId: "1:126061597996:web:dd444bbe46c6c457a50889"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
