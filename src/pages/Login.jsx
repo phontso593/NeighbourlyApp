@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/neighborly-black-vertical.png";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";   
+import { getAuth,signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";   
 import { getFirestore } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
@@ -27,18 +27,20 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
-
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Dummy login validation (replace with Firebase/Auth later)
-    if (email && password) {
+    setLoading(true);
+    const auth = getAuth();
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
       alert("Login successful!");
       navigate("/dashboard");
-    } else {
-      alert("Please enter email and password.");
+    } catch (error) {
+      alert(error.message || "Login failed. Please check your credentials.");
     }
+    setLoading(false);
   };
 
   return (
@@ -140,7 +142,9 @@ const Login = () => {
           required
         />
         <br />
-        <button style={{ ...buttonStyle, fontSize: '1rem', padding: '6px 0' }} type="submit">Sign in</button>
+        <button style={{ ...buttonStyle, fontSize: '1rem', padding: '6px 0' }} type="submit" disabled={loading}>
+          {loading ? "Signing in..." : "Sign in"}
+        </button>
         <br />
         <p style={{ textAlign: 'center', color: '#adadad', fontSize: '0.9rem' }}>
           Don't have an account yet? <Link
