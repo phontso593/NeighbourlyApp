@@ -1,30 +1,9 @@
 import React, { useState } from "react";
 import logo from "../assets/neighborly-black-vertical.png";
 import { Link } from "react-router-dom";
-import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
-import { getFirestore } from "firebase/firestore";  
-
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyBGnN9GJuboajSn7TdMGPFKU0xZjRLXyYA",
-  authDomain: "neighbourly-jassm.firebaseapp.com",
-  projectId: "neighbourly-jassm",
-  storageBucket: "neighbourly-jassm.firebasestorage.app",
-  messagingSenderId: "126061597996",
-  appId: "1:126061597996:web:dd444bbe46c6c457a50889"
-};
-
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
 
 
 const Register = () => {
@@ -35,9 +14,7 @@ const Register = () => {
  
   const navigate = useNavigate();
 
-
-const auth = getAuth(app);
-
+  const auth = getAuth();
 
 function handleSubmit(e) {
   e.preventDefault();

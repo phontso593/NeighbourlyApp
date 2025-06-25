@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
+import {  collection, addDoc, Timestamp } from "firebase/firestore";
+import {db} from "../assets/firebaseConfig";
 
 const DonateForm = () => {
   const [item, setItem] = useState("");
@@ -15,9 +17,26 @@ const DonateForm = () => {
     "Other",
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(`Donated ${quantity} x ${item}`);
+    try {
+      await addDoc(collection(db, "donations"), {
+        item,
+        quantity,
+        description,
+        category,
+        createdAt: Timestamp.now(),
+      });
+      alert(`Donated ${quantity} x ${item}`);
+      setItem("");
+      setQuantity(1);
+      setDescription("");
+      setCategory("Clothes");
+      window.location.reload(); // Refresh the page to show the new donation
+    } catch (error) {
+      console.error("Donation failed:", error);
+      alert("Failed to donate: " + error.message);
+    }
   };
 
   return (

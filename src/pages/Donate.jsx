@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import DonateForm from "./DonateForm";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/firestore";
 
 const Donate = () => {
+  /*
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(getAuth(), (user) => {
       if (!user) {
@@ -15,6 +16,7 @@ const Donate = () => {
     return () => unsubscribe();
   }, []);
 
+  */
   return (
     <>
       <main>
