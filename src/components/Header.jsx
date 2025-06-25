@@ -1,26 +1,27 @@
 // src/components/Header.jsx
 import React from "react";
-import Link from "next/link";
+import { Link } from "react-router-dom";
+import logo from "../assets/neighborly-black-vertical.png";
 
 const Header = () => {
   return (
     <header style={styles.header}>
-      <img src="https://placehold.co/140x140.png" alt="Neighbourly Logo" style={styles.logo} data-ai-hint="logo" />
+      <img src={logo} alt="Neighbourly Logo" style={styles.logo} />
       <h1 style={styles.title}>Neighbourly</h1>
       <nav>
-        <Link href="/" style={styles.link}>
+        <Link to="/" style={styles.link}>
           Home
         </Link>
-        <Link href="/donate" style={styles.link}>
+        <Link to="/donate" style={styles.link}>
           Donate
         </Link>
-        <Link href="/request" style={styles.link}>
+        <Link to="/request" style={styles.link}>
           Request
         </Link>
-        <Link href="/login" style={styles.link}>
+        <Link to="/login" style={styles.link}>
           Login
         </Link>
-        <Link href="/register" style={styles.link}>
+        <Link to="/register" style={styles.link}>
           Register
         </Link>
       </nav>
