@@ -12,7 +12,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import DonateForm from "./pages/DonateForm";
 import Profile from "./pages/Profile";
-import Requests from "./pages/Requests";
+import RequestForm from "./pages/RequestForm";
 import AdminReports from "./pages/AdminReports";
 import LandingPage from "./pages/LandingPage";
 
@@ -31,7 +31,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/donateform" element={<DonateForm />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/requests" element={<Requests />} />
+        <Route path="/RequestForm" element={<RequestForm />} />
         <Route path="/adminreports" element={<AdminReports />} />
       </Routes>
       <Footer />
