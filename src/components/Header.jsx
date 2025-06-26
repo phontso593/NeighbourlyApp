@@ -70,6 +70,10 @@ const styles = {
   title: { color: "white",
      marginLeft: "200px",
      fontSize: "1.5rem",
+     fontWeight: "bold",
+    fontSize: "2.5rem",
+    display: "block",
+    textAlign: "left",
   },
 };
 
