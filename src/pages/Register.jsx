@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../assets/neighborly-black-vertical.png";
+import logo from "../assets/neighborly-hor logo.png";
 import { Link } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";

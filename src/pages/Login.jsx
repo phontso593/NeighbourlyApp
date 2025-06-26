@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import logo from "../assets/neighborly-black-vertical.png";
+import logo from "../assets/neighborly-hor logo.png";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
