@@ -57,37 +57,71 @@ const LandingPage = () => {
           />
         </section>
 
-        <div style={{ height: "3rem" }} />
+        <div style={{ height: "8rem" }} />
 
-        {/* Featured Donations Section */}
+           {/* Featured Donations Section */}
+          <section
+            className="mx-auto mb-8"
+            style={{
+              maxWidth: styles.container.maxWidth,
+              width: styles.container.width,
+            }}
+          >
+            <h2 className="text-4xl font-bold mb-4 text-blue-800">Featured Donations</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-blue-200 rounded-lg shadow p-6 flex flex-col items-center" style={{ minHeight: "200px" }}>
+                <span className="text-4xl mb-2">🧸</span>
+                <h4 className="font-semibold mb-2 text-lg">Children's Toys</h4>
+                <p className="text-gray-600 text-base text-center">Gently used toys for ages 3-7 available for donation.</p>
+              </div>
+              <div className="bg-blue-200 rounded-lg shadow p-6 flex flex-col items-center" style={{ minHeight: "200px" }}>
+                <span className="text-4xl mb-2">👚</span>
+                <h4 className="font-semibold mb-2 text-lg">Winter Clothes</h4>
+                <p className="text-gray-600 text-base text-center">Warm jackets and sweaters for families in need.</p>
+              </div>
+              <div className="bg-blue-200 rounded-lg shadow p-6 flex flex-col items-center" style={{ minHeight: "200px" }}>
+                <span className="text-4xl mb-2">📚</span>
+                <h4 className="font-semibold mb-2 text-lg">Books</h4>
+                <p className="text-gray-600 text-base text-center">A variety of books for all ages, ready to inspire.</p>
+              </div>
+            </div>
+          </section>
+
+          <div style={{ height: "8rem" }} />
+
+          {/* How it works Section */}
         <section
           className="mx-auto mb-8"
           style={{
             maxWidth: styles.container.maxWidth,
             width: styles.container.width,
+            background: "#eaf1fb",
+            borderRadius: "10px",
+            padding: "2.5rem 2rem",
+            boxShadow: "0 2px 8px rgba(0,0,0,0.06)",
           }}
         >
-          <h2 className="text-2xl font-bold mb-4 text-blue-800">Featured Donations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-blue-200 rounded-lg shadow p-4 flex flex-col items-center" style={{ minHeight: "180px" }}>
-              <span className="text-3xl mb-2">🧸</span>
-              <h4 className="font-semibold mb-1">Children's Toys</h4>
-              <p className="text-gray-600 text-sm text-center">Gently used toys for ages 3-7 available for donation.</p>
+          <h2 className="text-2xl font-bold mb-6 text-blue-800 text-center">How it works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex flex-col items-center">
+              <div className="text-4xl mb-2">📝</div>
+              <h4 className="font-semibold mb-1">1. Sign Up or Login</h4>
+              <p className="text-gray-700 text-center text-sm">Create an account or log in to join the community.</p>
             </div>
-            <div className="bg-blue-200 rounded-lg shadow p-4 flex flex-col items-center" style={{ minHeight: "180px" }}>
-              <span className="text-3xl mb-2">👚</span>
-              <h4 className="font-semibold mb-1">Winter Clothes</h4>
-              <p className="text-gray-600 text-sm text-center">Warm jackets and sweaters for families in need.</p>
+            <div className="flex flex-col items-center">
+              <div className="text-4xl mb-2">🎁</div>
+              <h4 className="font-semibold mb-1">2. Donate or Request</h4>
+              <p className="text-gray-700 text-center text-sm">List items to donate or request what you need.</p>
             </div>
-            <div className="bg-blue-200 rounded-lg shadow p-4 flex flex-col items-center" style={{ minHeight: "180px" }}>
-              <span className="text-3xl mb-2">📚</span>
-              <h4 className="font-semibold mb-1">Books</h4>
-              <p className="text-gray-600 text-sm text-center">A variety of books for all ages, ready to inspire.</p>
+            <div className="flex flex-col items-center">
+              <div className="text-4xl mb-2">🤝</div>
+              <h4 className="font-semibold mb-1">3. Connect & Share</h4>
+              <p className="text-gray-700 text-center text-sm">Connect with neighbors and arrange exchanges easily.</p>
             </div>
           </div>
         </section>
 
-        <div style={{ height: "3rem" }} />
+        <div style={{ height: "8rem" }} />
 
         <section
           className="mx-auto grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -129,7 +163,7 @@ const FeatureCard = ({ icon, title, description }) => (
 const styles = {
   container: {
     padding: "5rem 3rem",
-    maxWidth: "1200px",
+    maxWidth: "1300px",
     width: "100%",
     boxSizing: "border-box",
     margin: "2rem auto",
@@ -141,6 +175,7 @@ const styles = {
     gridTemplateColumns: "1fr 1fr",
     gap: "2rem",
     alignItems: "center",
+    minHeight: "520px", // Increased height
   },
   header: {
     fontWeight: "bold",

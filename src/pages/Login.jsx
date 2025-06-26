@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import logo from "../assets/neighborly-hor logo.png";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup,OAuthProvider } from "firebase/auth";
 
 
 const Login = () => {
@@ -11,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
+  {/* Regular email submits */}
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -21,6 +23,51 @@ const Login = () => {
       navigate("/dashboard");
     } catch (error) {
       alert(error.message || "Login failed. Please check your credentials.");
+    }
+    setLoading(false);
+  };
+
+  {/* GitHub login handler */}
+  const handleGithubLogin = async () => {
+    setLoading(true);
+    const auth = getAuth();
+    const provider = new OAuthProvider('github.com');
+    try {
+      await signInWithPopup(auth, provider);
+      alert("GitHub login successful!");
+      navigate("/dashboard");
+    } catch (error) {
+      alert(error.message || "GitHub login failed.");
+    }
+    setLoading(false);
+  };
+
+  {/* Google handler */}
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+    try {
+      await signInWithPopup(auth, provider);
+      alert("Google login successful!");
+      navigate("/dashboard");
+    } catch (error) {
+      alert(error.message || "Google login failed.");
+    }
+    setLoading(false);
+  };
+
+  {/* Facebook login handler */}
+  const handleFacebookLogin = async () => {
+    setLoading(true);
+    const auth = getAuth();
+    const provider = new OAuthProvider('facebook.com');
+    try {
+      await signInWithPopup(auth, provider);
+      alert("Facebook login successful!");
+      navigate("/dashboard");
+    } catch (error) {
+      alert(error.message || "Facebook login failed.");
     }
     setLoading(false);
   };
@@ -40,7 +87,8 @@ const Login = () => {
           Please enter your detail to sign in.
         </p>
         <div style={{ display: 'flex', justifyContent: 'center', gap: '8px' }}>
-          {/* Apple Login button */}
+
+          {/* Github login button */}
           <button
             type="button"
             style={{
@@ -57,33 +105,32 @@ const Login = () => {
               justifyContent: 'center',
             }}
             onClick={() => {
-              alert("For Apple when implement with firebase.");
-            }} > 
-            <img src={require("../assets/apple logo.png")} 
-            alt="Apple" style={{ height: '20px', width: '35px' }} />
-          </button>
+              handleGithubLogin();
+              }} > 
+              <img src={require("../assets/github logo.png")} 
+              alt="Apple" style={{ height: '20px', width: '20px', alignItems:'center' }} />
+              </button>
 
-          {/* Google Login button */}
-          <button
-            type="button"
-            style={{
-              backgroundColor: '',
-              padding: '6px 12px',
-              borderRadius: '8px',
-              border: '1px solid #000000',
-              cursor: 'pointer',
-              height: '30px',
-              width: '80px',
-              fontSize: '0.9rem',
-            }}
-            onClick={() => {
-              alert("For Google when implement with firebase.");
-            }} >
+              {/* Google Login button */}
+              <button
+              type="button"
+              style={{
+                backgroundColor: '',
+                padding: '6px 12px',
+                borderRadius: '8px',
+                border: '1px solid #000000',
+                cursor: 'pointer',
+                height: '30px',
+                width: '80px',
+                fontSize: '0.9rem',
+              }}
+              onClick={handleGoogleLogin}
+              >
               <img src={require("../assets/google logo.jpg")} 
-            alt="Google" style={{ height: '18px', width: '15px',marginLeft:'20px' }} />
-          </button>
+              alt="Google" style={{ height: '18px', width: '15px',marginLeft:'20px',alignItems:'center' }} />
+              </button>
 
-          {/*LinkedIn Login button */}
+              {/*Facebook Login button */}
           <button
             type="button"
             style={{
@@ -96,11 +143,11 @@ const Login = () => {
               width: '80px',
               fontSize: '0.9rem',
             }}
-            onClick={() => {
-              alert("For LinkedIn when implement with firebase.");
+            onClick={() => { 
+              handleFacebookLogin();
             }} >
-              <img src={require("../assets/linkedinlogo.jpg")} 
-            alt="LinkedIn" style={{ height: '20px', width: '35px',marginLeft:'10px'}} />
+              <img src={require("../assets/facebook logo.webp")} 
+            alt="LinkedIn" style={{ height: '20px', width: '40px',marginLeft:'8px',alignItems:'center'}} />
           </button>
         </div>
 

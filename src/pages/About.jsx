@@ -7,9 +7,9 @@ const About = () => {
     <>
       <Header />
       <main>
-        <h2>About Neighbourly</h2>
+        <h2>About Neighborly</h2>
         <p>
-          Neighbourly is a platform to donate and request items in your
+          Neighborly is a platform to donate and request items in your
           community.
         </p>
       </main>
