@@ -16,11 +16,9 @@ const [requested, setRequested] = useState([]);
 
   return (
     <>
-    <main>
+    <main style={{ background: '#f0f4f8' }}>
       <RequestForm />
-    </main>
-
-    <div style={styles.container}>
+      <div style={styles.container}>
       <h3 style={styles.sectionTitle}>Here are some of the requested items</h3>
       <div style={styles.donationsWrapper}>
         {requested.length === 0 && (
@@ -46,6 +44,9 @@ const [requested, setRequested] = useState([]);
         ))}
       </div>
     </div>
+    </main>
+
+    
     </>
   );
 };
@@ -54,7 +55,7 @@ export default Request;
 const styles = {
   container: {
     maxWidth: "1200px",
-    margin: "40px auto",
+    margin: "40px auto 0 auto", 
     padding: "24px",
     background: "#f9f9f9",
     borderRadius: "12px",

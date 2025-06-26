@@ -32,10 +32,9 @@ const Donate = () => {
 
   return (
     <>
-      <main>
+      <main style={{  background: '#f0f4f8'}}>
         <DonateForm />
-      </main>
-      
+          
     <div style={styles.container}>
       <h3 style={styles.sectionTitle}>Here are some of items donated</h3>
       <div style={styles.donationsWrapper}>
@@ -62,6 +61,8 @@ const Donate = () => {
         ))}
       </div>
     </div>
+      </main>
+    
     </>
   );
 };
@@ -70,7 +71,7 @@ export default Donate;
 const styles = {
   container: {
     maxWidth: "1200px",
-    margin: "40px auto",
+    margin: "40px auto 0 auto", 
     padding: "24px",
     background: "#f9f9f9",
     borderRadius: "12px",

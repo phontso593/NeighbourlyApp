@@ -44,7 +44,7 @@ const RequestForm = () => {
     <div
       style={{
         maxWidth: "400px",
-        margin: "40px auto",
+        margin: "0 auto 40px auto",
         padding: "32px",
         border: "2px solid #e0e0e0",
         borderRadius: "12px",

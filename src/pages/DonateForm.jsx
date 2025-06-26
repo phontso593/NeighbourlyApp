@@ -43,15 +43,23 @@ const DonateForm = () => {
     <div
       style={{
         maxWidth: "400px",
-        margin: "40px auto",
-        padding: "32px",
+        margin: "0 auto 40px auto", 
+        padding: "0 32px 32px 32px", 
         border: "2px solid #e0e0e0",
         borderRadius: "12px",
         background: "#fafbfc",
         boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
       }}
     >
-      <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "18px" }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "18px",
+          margin: 0, // Added margin: 0 to remove default form margin
+        }}
+      >
         <label style={{ fontWeight: "bold" }}>Item Name:</label>
         <input
           type="text"

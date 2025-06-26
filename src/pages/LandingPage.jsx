@@ -8,7 +8,7 @@ const LandingPage = () => {
 
 
   return (
-    <div className="min-h-screen flex flex-col justify-between bg-gray-50">
+    <div className="min-h-screen flex flex-col justify-between " style={{ backgroundColor: "#f0f4f8" }}>
       <main className="flex-1">
         <div style={{ height: "2.5rem" }} />
 
